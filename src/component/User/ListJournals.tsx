@@ -4,7 +4,6 @@ import {
   Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper, Typography, Box, Tooltip
 } from '@mui/material';
 import BookIcon from "@mui/icons-material/Book";
-import PersonIcon from "@mui/icons-material/Person";
 import CalendarMonthIcon from "@mui/icons-material/CalendarMonth";
 import {addJournal} from "../../util/userApiCalls";
 import {editJournal} from "../../util/userApiCalls";

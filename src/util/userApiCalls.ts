@@ -62,6 +62,7 @@ export function allJournalsApi(){
         return data;
       } catch (error) {
         console.error('There was a problem with the fetch operation:', error);
+        return [];
       }
     };
     return fetchData();
