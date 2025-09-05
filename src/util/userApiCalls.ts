@@ -89,3 +89,37 @@ export function updateSentimentPreference(enable: boolean) {
   };
   return fetchData();
 }
+
+export async function addJournal(journal: { title: string; content: string }) {
+  const response = await fetch("http://localhost:8081/api/journal", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      "Authorization": `Bearer ${localStorage.getItem('token')}`,
+    },
+    body: JSON.stringify(journal),
+  });
+  return response.json();
+}
+
+export async function editJournal(id: number, journal: { title: string; content: string }) {
+  const response = await fetch(`http://localhost:8081/api/journal/${id}`, {
+    method: "PUT",
+    headers: {
+      "Content-Type": "application/json",
+      "Authorization": `Bearer ${localStorage.getItem('token')}`,
+    },
+    body: JSON.stringify(journal),
+  });
+  return response.json();
+}
+
+export async function deleteJournal(id: number) {
+  const response = await fetch(`http://localhost:8081/api/journal/${id}`, {
+    method: "DELETE",
+    headers: {
+      "Authorization": `Bearer ${localStorage.getItem('token')}`,
+    },
+  });
+  return response.ok;
+}

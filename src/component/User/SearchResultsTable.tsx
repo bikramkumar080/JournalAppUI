@@ -3,7 +3,6 @@ import {
   Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper, Typography, Box, Tooltip
 } from '@mui/material';
 import BookIcon from "@mui/icons-material/Book";
-import PersonIcon from "@mui/icons-material/Person";
 import CalendarMonthIcon from "@mui/icons-material/CalendarMonth";
 
 export default function SearchResultsTable({ journals }: { journals: any[] }) {
@@ -26,10 +25,6 @@ export default function SearchResultsTable({ journals }: { journals: any[] }) {
                 <CalendarMonthIcon fontSize="small" sx={{ mr: 0.5 }} />
                 Date
               </TableCell>
-              <TableCell sx={{ color: "black", fontWeight: "bold" }}>
-                <PersonIcon fontSize="small" sx={{ mr: 0.5 }} />
-                Username
-              </TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
@@ -51,7 +46,6 @@ export default function SearchResultsTable({ journals }: { journals: any[] }) {
                   </Tooltip>
                 </TableCell>
                 <TableCell>{journal.date}</TableCell>
-                <TableCell>{journal.username}</TableCell>
               </TableRow>
             ))}
           </TableBody>
