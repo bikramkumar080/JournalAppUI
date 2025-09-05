@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import LockOutlinedIcon from "@mui/icons-material/LockOutlined"
-import {createAdminApi} from "../../util/apiCalls"
+import {createAdminApi} from "../../util/adminApiCalls"
 
 import {Box,
 Button,
@@ -17,7 +17,7 @@ const [password, setPassword] = useState('');
 const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     try {
-    const result = createAdminApi(email, password);
+    createAdminApi(email, password);
     // Handle success (show message, clear form, etc.)
     alert("Admin created successfully!");
     setEmail('');

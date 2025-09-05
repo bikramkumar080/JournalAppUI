@@ -17,7 +17,7 @@ import NotificationsIcon from '@mui/icons-material/Notifications';
 import MoreIcon from '@mui/icons-material/MoreVert';
 import { logout } from '../../util/logout';
 import { useNavigate } from 'react-router-dom';
-import { search } from "../../util/apiCalls";
+import { search } from "../../util/adminApiCalls";
 
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
@@ -97,6 +97,7 @@ export default function PrimarySearchAppBar( props: {
     props.setShowUsers(false);
     props.setShowJournals(false);
     props.setCreateAdminOpen(false);
+    props.setSearchResults({ entries: [], users: [] });
     handleMenuClose();
   }
 
@@ -222,6 +223,7 @@ export default function PrimarySearchAppBar( props: {
                 props.setShowUsers(false);
                 props.setShowJournals(false);
                 props.setCreateAdminOpen(false);
+                props.setShowUserInfo(false);
               }
             }}
             />

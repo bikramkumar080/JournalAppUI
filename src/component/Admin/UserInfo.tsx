@@ -4,7 +4,7 @@ import VerifiedUserIcon from "@mui/icons-material/VerifiedUser";
 import SentimentSatisfiedAltIcon from "@mui/icons-material/SentimentSatisfiedAlt";
 import SentimentDissatisfiedIcon from "@mui/icons-material/SentimentDissatisfied";
 import EmailIcon from "@mui/icons-material/Email";
-import { getInfo } from "../../util/apiCalls";
+import { getInfo } from "../../util/adminApiCalls";
 
 export default function UserInfo() {
   const [user, setUser] = React.useState<any>(null);
@@ -29,7 +29,7 @@ export default function UserInfo() {
   if (!user) return null;
 
   return (
-    <Paper sx={{ p: 4, maxWidth: 420, mx: "auto", mt: 10, boxShadow: 8, borderRadius: 4, border: "2px solid",borderColor: "primary.main"}}>
+    <Paper sx={{ p: 4, maxWidth: 500, mx: "auto", mt: 10, boxShadow: 8, borderRadius: 4, border: "2px solid",borderColor: "primary.main"}}>
       <Box sx={{ display: "flex", alignItems: "center", mb: 2 }}>
         <Avatar sx={{ bgcolor: "primary.main", mr: 2, width: 56, height: 56, fontSize: 32 }}>
           {user.username ? user.username[0].toUpperCase() : "U"}

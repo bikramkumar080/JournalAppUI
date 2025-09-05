@@ -8,7 +8,7 @@ import PeopleIcon from "@mui/icons-material/People";
 import BookIcon from "@mui/icons-material/Book";
 import EmailIcon from "@mui/icons-material/Email";
 import { useTheme } from '@mui/material/styles';
-import { sendMail } from "../../util/apiCalls";
+import { sendMail } from "../../util/adminApiCalls";
 
 export default function Sidebar(props: {
     showUsers: boolean;

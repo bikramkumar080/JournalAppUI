@@ -1,5 +1,5 @@
 import React from "react";
-import { allJournalsApi } from "../../util/apiCalls";
+import { allJournalsApi } from "../../util/adminApiCalls";
 import {
   Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper, Typography, Box, Tooltip
 } from '@mui/material';

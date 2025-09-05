@@ -4,13 +4,15 @@ import AdminPanelSettingsIcon from "@mui/icons-material/AdminPanelSettings";
 import PeopleIcon from "@mui/icons-material/People";
 import BookIcon from "@mui/icons-material/Book";
 import EmailIcon from "@mui/icons-material/Email";
-import { sendMail } from "../../util/apiCalls";
+import { sendMail } from "../../util/adminApiCalls";
+import { getUsernameFromToken } from "../../util/username";
 
 function Home(props: {showUsers: boolean; setShowUsers: (show: boolean) => void; showJournals: boolean; setShowJournals: (show: boolean) => void; CreateAdminOpen: boolean; setCreateAdminOpen: (open: boolean) => void; setSearchResults: ( results: { entries: any[]; users: any[] } ) => void; setShowUserInfo: (show: boolean) => void;}) {
+  const username = getUsernameFromToken();
   return (
     <Box sx={{ p: 4 }}>
       <Typography variant="h4" fontWeight="bold" gutterBottom>
-        Welcome, Admin!
+        Welcome, {username ? username : "Admin"}!
       </Typography>
       <Typography variant="subtitle1" color="text.secondary" gutterBottom>
         Manage users, journals, and admin tasks from your dashboard.
