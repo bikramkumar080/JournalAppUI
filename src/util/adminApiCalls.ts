@@ -115,6 +115,7 @@ export function search(query: string){
         return data;
       } catch (error) {
         console.error('There was a problem with the fetch operation:', error);
+        return { entries: [], users: []}
       }
     };
     return fetchData();
