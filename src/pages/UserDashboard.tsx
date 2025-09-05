@@ -14,6 +14,7 @@ const UserDashboard: React.FC = () => {
   const [searchQuery, setSearchQuery] = React.useState('');
   const [searchResults, setSearchResults] = React.useState<any[]>([]);
   const [showUserInfo, setShowUserInfo] = React.useState(false);
+  const [showSearchResults, setShowSearchResults] = React.useState(false);
 
   return (
     <div style={{ display: "flex", flexDirection: "column" }}>
@@ -25,6 +26,7 @@ const UserDashboard: React.FC = () => {
         setSearchResults={setSearchResults}
         setShowJournals={setShowJournals}
         setShowUserInfo={setShowUserInfo}
+        setShowSearchResults={setShowSearchResults}
       />
       <div style={{ flex: 1, display: "flex" }}>
         {sidebarOpen && (
@@ -33,6 +35,7 @@ const UserDashboard: React.FC = () => {
             setShowJournals={setShowJournals}
             setSearchResults={setSearchResults}
             setShowUserInfo={setShowUserInfo}
+            setShowSearchResults={setShowSearchResults}
           />
         )}
         <div
@@ -45,7 +48,7 @@ const UserDashboard: React.FC = () => {
         >
           <Home />
           {showJournals && <ListJournals />}
-          <SearchResultsTable journals={searchResults} />
+          {showSearchResults && <SearchResultsTable journals={searchResults}/>}
           {showUserInfo && <UserInfo />}
         </div>
       </div>

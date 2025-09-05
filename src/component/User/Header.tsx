@@ -67,6 +67,7 @@ export default function PrimarySearchAppBar( props: {
   setSearchResults: ( results: any[] ) => void;
   setShowJournals: (show: boolean) => void;
   setShowUserInfo: (show: boolean) => void;
+  setShowSearchResults: (show: boolean) => void;
 }) {
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] =
@@ -94,6 +95,7 @@ export default function PrimarySearchAppBar( props: {
     props.setShowUserInfo(true);
     props.setShowJournals(false);
     props.setSearchResults([]);
+    props.setShowSearchResults(false);
     handleMenuClose();
   }
 
@@ -218,6 +220,7 @@ export default function PrimarySearchAppBar( props: {
                 props.setSearchResults(results);
                 props.setShowJournals(false);
                 props.setShowUserInfo(false);
+                props.setShowSearchResults(true);
               }
             }}
             />

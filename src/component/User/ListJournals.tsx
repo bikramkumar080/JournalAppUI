@@ -92,11 +92,11 @@ function ListJournals() {
           journal={editData}
           onSave={async (data) => {
             if (editData) {
-              await editJournal(editData.id, data);
-              // update state
+                const updated = await editJournal(editData.id, data);
+                setJournals(journals.map(j => j.id === editData.id ? { ...j, ...updated } : j));
             } else {
-              await addJournal(data);
-              // update state
+                const newJournal = await addJournal(data);
+                setJournals([...journals, newJournal]);
             }
             setOpenDialog(false);
             // refetch or update journals

@@ -11,6 +11,7 @@ export default function Sidebar(props: {
     setShowJournals: (show: boolean) => void;
     setSearchResults: ( results: any[] ) => void;
     setShowUserInfo: (show: boolean) => void;
+    setShowSearchResults: (show: boolean) => void;
 }) {
   const theme = useTheme();
 
@@ -22,6 +23,7 @@ export default function Sidebar(props: {
         props.setShowJournals(!props.showJournals);
         props.setSearchResults([]);
         props.setShowUserInfo(false);
+        props.setShowSearchResults(false);
       },
       selected: props.showJournals,
     },
